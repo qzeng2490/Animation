@@ -52,7 +52,15 @@ class DropItView: NamedBezierPathsView, UIDynamicAnimatorDelegate
                 {
                     [unowned self](data, error) in
                     if self.dropBehavoir.dynamicAnimator != nil {
-                        if let dx = data?.acceleration.x, let dy = data?.acceleration.y {
+                        if var dx = data?.acceleration.x, var dy = data?.acceleration.y {
+                            switch UIDevice.currentDevice().orientation {
+                            case .Portrait: dy = -dy
+                            case .PortraitUpsideDown: break
+                            case .LandscapeRight: swap(&dx, &dy)
+                            case .LandscapeLeft: swap(&dx, &dy); dy = -dy
+                            default: dx = 0; dy = 0
+                            }
+                            
                             self.dropBehavoir.gravity.gravityDirection = CGVector(dx: dx, dy: dy)
                         }
                     } else {
