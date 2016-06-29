@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreMotion
 
 class DropItView: NamedBezierPathsView, UIDynamicAnimatorDelegate
 {
@@ -27,11 +28,41 @@ class DropItView: NamedBezierPathsView, UIDynamicAnimatorDelegate
         didSet {
             if animating {
                 animator.addBehavior(dropBehavoir)
-                
+                updateRealGravity()
             } else {
                 animator.removeBehavior(dropBehavoir)
                 
             }
+        }
+    }
+    
+    var realGravity: Bool = false {
+        didSet {
+            updateRealGravity()
+        }
+    }
+    
+    private let motionManger = CMMotionManager()
+    
+    private func updateRealGravity() {
+        if realGravity {
+            if motionManger.accelerometerAvailable && motionManger.accelerometerActive == false {
+                motionManger.accelerometerUpdateInterval = 0.25
+                motionManger.startAccelerometerUpdatesToQueue(NSOperationQueue.mainQueue())
+                {
+                    [unowned self](data, error) in
+                    if self.dropBehavoir.dynamicAnimator != nil {
+                        if let dx = data?.acceleration.x, let dy = data?.acceleration.y {
+                            self.dropBehavoir.gravity.gravityDirection = CGVector(dx: dx, dy: dy)
+                        }
+                    } else {
+                        self.motionManger.stopAccelerometerUpdates()
+                    }
+                    
+                }
+            }
+        } else {
+            motionManger.stopAccelerometerUpdates()
         }
     }
     
