@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		D1E1ED501D23812900493B46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E1ED4F1D23812900493B46 /* AppDelegate.swift */; };
-		D1E1ED521D23812900493B46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E1ED511D23812900493B46 /* ViewController.swift */; };
 		D1E1ED551D23812900493B46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1E1ED531D23812900493B46 /* Main.storyboard */; };
 		D1E1ED571D23812900493B46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1E1ED561D23812900493B46 /* Assets.xcassets */; };
 		D1E1ED5A1D23812900493B46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1E1ED581D23812900493B46 /* LaunchScreen.storyboard */; };
+		D1E1ED631D23819E00493B46 /* DropItView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E1ED621D23819E00493B46 /* DropItView.swift */; };
+		D1E1ED651D2381C000493B46 /* DropItViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E1ED641D2381C000493B46 /* DropItViewController.swift */; };
+		D1E1ED671D23854B00493B46 /* UIKit Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E1ED661D23854B00493B46 /* UIKit Extension.swift */; };
+		D1E1ED691D2399B400493B46 /* FallingObjectBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E1ED681D2399B400493B46 /* FallingObjectBehavior.swift */; };
+		D1E1ED6B1D23ACCD00493B46 /* NamedBezierPathsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E1ED6A1D23ACCD00493B46 /* NamedBezierPathsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D1E1ED4C1D23812900493B46 /* DropIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DropIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1E1ED4F1D23812900493B46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D1E1ED511D23812900493B46 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D1E1ED541D23812900493B46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D1E1ED561D23812900493B46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D1E1ED591D23812900493B46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D1E1ED5B1D23812900493B46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D1E1ED621D23819E00493B46 /* DropItView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropItView.swift; sourceTree = "<group>"; };
+		D1E1ED641D2381C000493B46 /* DropItViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropItViewController.swift; sourceTree = SOURCE_ROOT; };
+		D1E1ED661D23854B00493B46 /* UIKit Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit Extension.swift"; sourceTree = "<group>"; };
+		D1E1ED681D2399B400493B46 /* FallingObjectBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FallingObjectBehavior.swift; sourceTree = "<group>"; };
+		D1E1ED6A1D23ACCD00493B46 /* NamedBezierPathsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamedBezierPathsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +62,26 @@
 		D1E1ED4E1D23812900493B46 /* DropIt */ = {
 			isa = PBXGroup;
 			children = (
-				D1E1ED4F1D23812900493B46 /* AppDelegate.swift */,
-				D1E1ED511D23812900493B46 /* ViewController.swift */,
+				D1E1ED611D23815C00493B46 /* Surporting Files */,
 				D1E1ED531D23812900493B46 /* Main.storyboard */,
+				D1E1ED621D23819E00493B46 /* DropItView.swift */,
+				D1E1ED6A1D23ACCD00493B46 /* NamedBezierPathsView.swift */,
+				D1E1ED641D2381C000493B46 /* DropItViewController.swift */,
+				D1E1ED681D2399B400493B46 /* FallingObjectBehavior.swift */,
+				D1E1ED661D23854B00493B46 /* UIKit Extension.swift */,
+			);
+			path = DropIt;
+			sourceTree = "<group>";
+		};
+		D1E1ED611D23815C00493B46 /* Surporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D1E1ED4F1D23812900493B46 /* AppDelegate.swift */,
 				D1E1ED561D23812900493B46 /* Assets.xcassets */,
 				D1E1ED581D23812900493B46 /* LaunchScreen.storyboard */,
 				D1E1ED5B1D23812900493B46 /* Info.plist */,
 			);
-			path = DropIt;
+			name = "Surporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +155,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1E1ED521D23812900493B46 /* ViewController.swift in Sources */,
+				D1E1ED651D2381C000493B46 /* DropItViewController.swift in Sources */,
+				D1E1ED631D23819E00493B46 /* DropItView.swift in Sources */,
+				D1E1ED6B1D23ACCD00493B46 /* NamedBezierPathsView.swift in Sources */,
+				D1E1ED691D2399B400493B46 /* FallingObjectBehavior.swift in Sources */,
 				D1E1ED501D23812900493B46 /* AppDelegate.swift in Sources */,
+				D1E1ED671D23854B00493B46 /* UIKit Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,12 +10,14 @@ import UIKit
 
 class NamedBezierPathsView: UIView {
 
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
+    var bizierPaths = [String:UIBezierPath]() { didSet { setNeedsDisplay() } }
+    
     override func drawRect(rect: CGRect) {
         // Drawing code
+        for (_,path) in bizierPaths {
+            path.stroke()
+        }
     }
-    */
+ 
 
 }
